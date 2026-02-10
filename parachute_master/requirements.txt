@@ -1,0 +1,10 @@
+# requirements.txt
+pandas
+pyautogui
+schedule
+selenium
+python-dotenv
+openpyxl
+pytz
+requests
+pywin32

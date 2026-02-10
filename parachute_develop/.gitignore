@@ -1,0 +1,113 @@
+# Environments
+.env
+.env.*
+env/
+ENV/
+env.bak/
+venv/
+.venv
+venv.bak/
+*.local
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+
+# Logs
+logs/
+*.log
+logs/*.log
+*.pot
+
+# Editor & IDE Configurations
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/jsconfig.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript
+*.tsbuildinfo
+
+# Dependency Directories
+jspm_packages/
+
+# Build Artifacts
+dist/
+dist-ssr/
+build/
+
+# Vue.js Specific
+.vite
+.vite-cache/
+
+# Config Files
+config/*
+config.py
+.config
+
+# Python Cache and Packaging
+*.pyc
+.Python
+__pycache__/
+*.so
+pip-log.txt
+pip-delete-this-directory.txt
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing Files
+/cypress/videos/
+/cypress/screenshots/
+test-results/
+playwright-report/
+coverage/
+.nyc_output/
+
+# Translations
+*.mo
+
+# Cache and Temporary Files
+.DS_Store
+*.cache
+.cache/
+*.temp
+temp/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.lock
+*.pid
+*.seed
+*.pid.lock

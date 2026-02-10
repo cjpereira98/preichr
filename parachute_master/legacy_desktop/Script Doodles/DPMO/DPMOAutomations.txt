@@ -1,0 +1,35 @@
+<input type="text" name="user_name_field" id="user_name_field" value="" aria-required="true" aria-invalid="false" placeholder="Enter your Amazon username" autocomplete="username" autocorrect="off" autocapitalize="none" spellcheck="false">
+
+<input type="password" name="password_field" id="password_field" value="" aria-required="true" aria-invalid="false" autocomplete="current-password" autocorrect="off" autocapitalize="none" placeholder="Enter your security key PIN">
+
+us-east-1:SWF2 Items Not On Purchase Order - PID 1
+us-east-1:SWF2 Items Not On Purchase Order - PID 2
+us-east-1:SWF2 Items Not On Purchase Order - PID 3
+us-east-1:SWF2 Items Not On Purchase Order - PID 4
+us-east-1:SWF2 Items Not On Purchase Order - PID 5
+us-east-1:SWF2 Items Not On Purchase Order - PID 6
+
+Access Key: AKIAXYKJTZ6B3OSQIXVJ
+Secret Access Key: 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
+
+Monitor Links:
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%201, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID1
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%202, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID2
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%203, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID3
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%204, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID4
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%205, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID5
+https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2%20Items%20Not%20On%20Purchase%20Order%20-%20PID%206, https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min_PID6
+
+Total - https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_ITEM_NOT_ON_PO, Granluar https://monitorportal.amazon.com/monitors/overview?&id=us-east-1:SWF2_INOPO_1_Min
+
+Algorithm: Every 1 minute - check
+
+<div id="alarmstatus" class="alarm">
+                    <img src="/images/icon-red-flag.gif" title="In alarm" border="0">
+                    <span id="inAlarm">Alarm is not OK</span>
+            </div>
+<div id="alarmstatus">
+                    <img src="/images/icon-green-alarm.gif" title="Not in alarm" border="0">
+                    <span id="notInAlarm">Alarm is OK</span>
+            </div>
+

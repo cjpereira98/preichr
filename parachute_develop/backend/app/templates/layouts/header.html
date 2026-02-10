@@ -1,0 +1,12 @@
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='images/favicon.ico') }}">
+      
+  {% for css_file in css_files %}
+  <link rel="stylesheet" href="{{ url_for('static', path=css_file) }}">
+  {% endfor %}
+
+  {% for js_file in js_files %}
+  <script src="{{ url_for('static', path=js_file) }}"></script>
+  {% endfor %}

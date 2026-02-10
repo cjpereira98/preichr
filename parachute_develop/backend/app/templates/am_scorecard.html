@@ -1,0 +1,29 @@
+<!-- templates/staffing_board.html -->
+<h1 class="page_title">
+  {{ page_title }} -
+  <select>
+    {% for week in weeks %}
+    <option value="{{ week['name'] }}"{% if week['name'] == current_week %} selected{% endif %}>Week {{ week['name'] }}</option>
+    {% endfor %}
+  </select>
+</h1>
+<div class="scorecard">
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns %}
+        <th class="{{ column.class }}">{{ column.name }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        {% for value, css_class in row %}
+        <td class="{{ css_class }}">{{ value }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

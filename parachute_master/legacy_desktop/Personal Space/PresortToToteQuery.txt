@@ -1,0 +1,13 @@
+select 
+sourcewarehouseid,
+DATE_TRUNC('day', eventtime) as evtdate,
+COUNT(*) as presort_to_tote_qty
+from andes.dart_ddl.ixd_inbound_presort 
+where destinationcontainer like 'tsX%' and
+eventtime >= '04-08-2025'
+group by
+sourcewarehouseid,
+DATE_TRUNC('day', eventtime)
+order by
+sourcewarehouseid,
+evtdate;

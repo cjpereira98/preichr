@@ -1,0 +1,30 @@
+with filtered as (
+  select
+    sourcewarehouseid,
+    date_trunc('day', eventtime) as evtdate,
+    destinationcontainer
+  from andes.dart_ddl.ixd_inbound_presort
+  where destinationcontainer ilike 'tsx%'
+    and eventtime >= date '2025-04-08'
+),
+per_container as (
+  select
+    sourcewarehouseid,
+    evtdate,
+    destinationcontainer,
+    count(*) as events_per_container
+  from filtered
+  group by 1,2,3
+)
+select
+  sourcewarehouseid,
+  evtdate,
+  -- total events across all containers
+  sum(events_per_container) as total_tsx_events,
+  -- how many unique containers
+  count(*) as unique_tsx_containers,
+  -- how many containers had exactly one event
+  sum(case when events_per_container = 1 then 1 else 0 end) as containers_with_single_event
+from per_container
+group by 1,2
+order by 1,2;

@@ -1,0 +1,46 @@
+Tell me about yourself
+helping region to improve gross inventory adjustments
+why do you want the role
+
+Deliver Results: Tell me about a time that despite critical barriers you were able to deliver results. What were the barriers? How did you overcome them? What were the results?
+Tasked to drive adoption in new quality metric in outbound called pit scan compliance. Metrics goal was to ensure pit drivers were scanning pallets into trailers so the manifests would be accurate. Barrier: difficult to drive adoption on four corners especially when there is a communication/learning challenge. Overcame by creating a regular communication layer by means of weekly emails, giving updates on compliance week over week, giving visibility as to what shifts were making the most improvement (comparison between shifts). Worked with OM to implement accountability measures.
+
+One big measure that was implemented: if a pit driver did not load more than 50% of pallets in a week for three weeks in a row, they would lose permissions - created pain point for leadership and AAs. Get metric from mid 60% compliance to 97% compliance. 
+
+Get entitlement data from Adam.
+
+Bias For Action: Speed is critical in business. Tell me about a time you had to make a decision without much prep time and/or based on incomplete data? What decision did you make and how did you make it? Would you have do anything differently in retrospect?
+The closest example he can tie to this question was when he was tasked with being a support to the FL team. They were having an issue with a trailer that became a misload. After looking at it, it became apparent that a lot of information was missing because it turned out to be a reoccurring trend on a daily basis. He had to look deeper - after deep diving the situation, it became clear that the way that we were managing outbound arcs that were feeding into fluid load trailers was not being properly maintained. He sought alignment from Sr team on deleting inactive routing profiles. That caused a lot of concern for the team. Got all of the parties across day shift in the room. Painted the picture for how those pain points would disappear. Eventually, Miguel was able to finally get buy in from Senior team. The specific metric that measures compliance for that departing freight, fluid load sweep compliance went from an average of 87% to over the 97% threshold.
+
+Talk about what you would have done differently. This required two meetings - the first meeting was "this is a pain point and we need to fix it". Resulted in nothing. After that, he realized it was more of a matter of communicating the benefit to key stakeholders. Going forward he "will" communicate this way.
+
+Speak as if you learned and are already implementing. 
+
+Earn Trust: Tell me about a time you failed to earn the trust of your team.
+Thinking of all of the "SWF2 team"
+
+At IBD we have mancheck area (explains what mancheck is). Had a recent staffing issue where the ops team was trying to drive new staffing issue to address kickouts. New guidance left a gap at the manual check area, did not include problem solvers (explains why we want them there).The stations that the problem solvers were staffed at did not have the equipment set up.
+Had an in person conversation with the leadership team. (Say what level of leaders). Explained his observations. Wanted to place a stop gap (assuming you mean staff PS in the original location). Got buy in but wasnt getting the speed to action.
+What did he do -> made sure to escalate it, but did so in a public quality leadership channel so it could get visibility. Painted the entire conversation with (thematically the same thing with the last question). Did not sit as well with the leadership team being in a public channel.
+Could have had a more private conversation. 
+
+In the future, prior to escalating, communicate to the team directly.
+
+Life advice, know how to punch up. Interview advice, lie and say you already improved and give a fake example.
+
+Questions
+
+What do you think is the biggest Learning curve making the jump from being a PA to being an Area Manager
+
+Notes high level:
+taking your time is okay
+you can have pen and paper for multi part questions
+You did a really good job of explaining stuff ex. mancheck
+
+Notes to send:
+In elevator pitch, say why you want to be an AM, or at least nod to the transition.
+"GIA Kaizen with ACES"
+Try to get cost savings in place for your results if possible.
+Lie and say you already improved and give an "example"
+Be specific about levels (partned with L7 Ops Leaders)
+pen and paper are good for multi part questions

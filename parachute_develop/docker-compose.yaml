@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: parachute-backend:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/parachute/backend
+    environment:
+      - API_URL=http://localhost:8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: parachute-frontend:latest
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/parachute/frontend
+    environment:
+      - VUE_APP_API_URL=http://backend:5173

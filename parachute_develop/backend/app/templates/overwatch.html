@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actuals Date Range</title>
+
+</head>
+<body>
+
+<div class="container">
+    <h4>Actuals Date Range</h4>
+
+    <div class="input-group">
+        <label>
+            <input type="radio" name="date-range" value="day"> Day
+        </label>
+        <input type="date">
+    </div>
+
+    <div class="input-group">
+        <label>
+            <input type="radio" name="date-range" value="week"> Week
+        </label>
+        <input type="date">
+    </div>
+
+    <div class="input-group">
+        <label>
+            <input type="radio" name="date-range" value="month"> Month
+        </label>
+        <select>
+            <option value="february-2025">February 2025</option>
+            <option value="january-2025">January 2025</option>
+            <option value="december-2024">December 2024</option>
+            <option value="november-2024">November 2024</option>
+            <option value="october-2024">October 2024</option>
+            <option value="september-2024">September 2024</option>
+            <option value="august-2024">August 2024</option>
+            <option value="july-2024">July 2024</option>
+            <!-- Add other months as needed -->
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>
+            <input type="radio" name="date-range" value="intraday"> Intraday
+        </label>
+        <div class="input-group-inline">
+            <div class="datetime-selectors">
+            <input type="date">
+            <select class="time-select">
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <!-- Add other hours as needed -->
+            </select> :
+            <select class="time-select">
+                <option value="00">00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+                <!-- Add other minutes as needed -->
+            </select>
+            </div>
+            <span class="to-text">to</span>
+            <div class="datetime-selectors">
+            <input type="date">
+            <select class="time-select">
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <!-- Add other hours as needed -->
+            </select> :
+            <select class="time-select">
+                <option value="00">00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+                <!-- Add other minutes as needed -->
+            </select>
+            </div>
+        </div>
+    </div>
+
+    <button class="button">Update</button>
+</div>
+
+
+
+<div class="view-selection">
+    <button onclick="showView('Planner')">Planner</button>
+    <button onclick="showView('HC')">HC</button>
+    <button onclick="showView('TP')">TP</button>
+    <button onclick="showView('Rates')">Rates</button>
+    <button onclick="showView('FPP')">FPP</button>
+</div>
+
+<div id="view-message" class="view-message"></div>
+
+
+</body>
+</html>

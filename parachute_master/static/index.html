@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Problem Solver Staffing Plan</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+
+        .site-title {
+            text-align: center;
+        }
+    
+        .table-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          overflow-x: auto;
+        }
+    
+        .table-row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+    
+        .header-cell {
+          background-color: rgb(48, 84, 150);
+          color: #fff;
+          font-weight: bold;
+        }
+
+        .department {
+          flex: 1 0 calc(100% / 4); /* Make each cell 1/12th of the row */
+          padding: 10px;
+          text-align: center;
+          box-sizing: border-box;
+          border: 1px solid #ddd;
+          background-color: rgb(150, 48, 136);
+          color: #fff;
+          font-weight: bold;
+        }
+    
+        .table-cell, .header-cell {
+          flex: 1 0 calc(100% / 12); /* Make each cell 1/12th of the row */
+          padding: 10px;
+          text-align: center;
+          border: 1px solid #ddd;
+          box-sizing: border-box;
+        }
+
+        .rboarder {
+          border-right: 5px solid #FFF;
+        }
+
+        .lboarder {
+          border-left: 5px solid #FFF;
+        }
+    
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+          .table-cell, .header-cell {
+            flex: 1 0 calc(100% / 4); /* 4 cells per row on smaller screens */
+            padding: 8px;
+          }
+        }
+    
+        @media (max-width: 480px) {
+          .table-cell, .header-cell {
+            flex: 1 0 100%; /* Each cell on its own row on very small screens */
+          }
+        }
+      </style>
+    </head>
+    <body>
+    <h2 class="site-title">Problem Solver Staffing Plan</h2>
+    <div class="table-container">
+      <!-- Header Row -->
+      <div class="table-row">
+        <div class="department rboarder">Jackpot North</div>
+        <div class="department rboarder">Jackpot South</div>
+        <div class="department rboarder">NPC</div>
+        <div class="department">NPC</div>
+      </div>
+      <div class="table-row header-row">
+        <div class="header-cell">Role</div>
+        <div class="header-cell">Associate</div>
+        <div class="header-cell rboarder">Location</div>
+        <div class="header-cell">Role</div>
+        <div class="header-cell">Associate</div>
+        <div class="header-cell rboarder">Location</div>
+        <div class="header-cell">Role</div>
+        <div class="header-cell">Associate</div>
+        <div class="header-cell rboarder">Location</div>
+        <div class="header-cell">Role</div>
+        <div class="header-cell">Associate</div>
+        <div class="header-cell">Location</div>
+      </div>
+    
+      <!-- Data Rows (Repeat 30 times for 30 rows) -->
+      <div class="table-row">
+        <div class="table-cell"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell rboarder"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell rboarder"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell rboarder"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell"></div>
+        <div class="table-cell"></div>
+      </div>
+      <!-- Repeat similar rows until 30 rows are reached -->
+    </div>
+    
+    </body>
+</html>

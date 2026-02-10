@@ -1,0 +1,20 @@
+# requirements.txt
+pandas
+xarray
+pyautogui
+schedule
+selenium
+python-dotenv
+openpyxl
+pytz
+requests
+requests_kerberos
+types-requests
+httpx
+asyncio
+starlette
+pydantic
+fastapi[standard]
+jinja2
+faker
+# pywin32 - Depricating once transitioned to using Docker, the enivronment will always be on a Linux system

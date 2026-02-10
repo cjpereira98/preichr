@@ -1,0 +1,113 @@
+Phase 2+ Upgrades: 
+- GraphQL
+- Object Relational Mapper (ORM) Libraries
+    - Graph Database
+    - Relational Database
+- Frontend Javascript Framework [Vue.js] https://vuejs.org/
+    - Add Same-Codebase-Cross-Platform Server-side Rendering Support [Quasar] https://quasar.dev
+    - DOM-base Server-side Rendering Component Library [Vue Data UI] https://vue-data-ui.graphieros.com/examples
+- Test-Driven Development (BDD) & Behavior-Driven Development SOPs
+- DevOps CI/CD Support [Docker] https://www.docker.com/
+- Logging
+- Systems Monitoring
+    - [Grafana] https://grafana.com / [Prometheus] https://prometheus.io/
+- Community Mods/Plugins Platform
+
+parachute/
+│
+├── backend/
+│   ├── .venv/                         # Virtual environment for the entire project
+│   │
+│   ├── app/                           # FastAPI application setup
+│   │   ├── main.py                    # Main entry point for FastAPI
+│   │   ├── routes/                    # API routes for FastAPI
+│   │   │   └── staffing_plan.py       # REST API endpoints for staffing_plan module
+│   │   │
+│   │   ├── Phase 2: graphql/          # Phase 2: GraphQL entry point for FastAPI
+│   │   │   └── schema.py              # Phase 2: GraphQL schema and resolver definitions
+│   │   │
+│   │   ├── static/                    # Static assets (CSS, JS, images)
+│   │   │   ├── css/                   # CSS files
+│   │   │   ├── images/                # Image files
+│   │   │   └── js/                    # JavaScript files
+│   │   │
+│   │   ├── templates/                 # HTML template files for rendering
+│   │   │   ├── layouts/               # Layout templates (e.g., header, footer)
+│   │   │   └── staffing_plan.html     # Template for staffing_plan views
+│   │   │
+│   │   └── test_api.py                # API tests for FastAPI application
+│   │
+│   ├── config/                        # Configuration files
+│   │   └── config.yaml                # Primary configuration file for the project
+│   │
+│   ├── modules/                       # Contains individual modules
+│   │   ├── staffing_plan/             # `staffing_plan` module
+│   │   │   ├── main.py                # Main script for staffing_plan module
+│   │   │   └── tests/                 # Unit tests for staffing_plan
+│   │   │       └── test_main.py       # Test suite for staffing_plan functionality
+│   │
+│   ├── src/                           # Project-wide library and shared resources
+│   │   ├── Phase 2: classes/          # Core classes for business logic
+│   │   │   ├── area.py                # Area class and related methods
+│   │   │   └── department.py          # Department class and related methods
+│   │   │
+│   │   ├── integrations/              # Integrations with external services
+│   │   │   └── example_integration.py # Example integration module
+│   │   │
+│   │   ├── Phase 2: metrics/          # Phase 2: Metrics collection and monitoring logic
+│   │   │   └── metrics_collector.py   # Phase 2: Collects and exports application metrics
+│   │   │
+│   │   ├── models/                    # Fixed data models and CSV files
+│   │   │   ├── department_area.csv    # Data file for department and area relationship
+│   │   │   └── department_process_code.csv # Data file for department process information
+│   │   │
+│   │   └── utils/                     # Reusable utility functions
+│   │       └── helper.py              # Helper functions for common tasks
+│   │
+│   ├── requirements.txt               # Global dependencies
+│   ├── requirements-dev.txt           # Development-specific dependencies (tests, CI tools, etc.)
+│   ├── requirements-db.txt            # Database-specific dependencies
+│   ├── run_main.sh                    # Script to run main application functionality
+│   ├── README.md                      # Project documentation
+│   ├── .gitignore                     # Ignore unnecessary files in Git
+│   │
+│   ├── Phase 2: docker/               # Phase 2: Docker-related files
+│   │   ├── Dockerfile                 # Phase 2: Dockerfile for the FastAPI app
+│   │   ├── docker-compose.yml         # Phase 2: Docker Compose for multi-container setup
+│   │   └── .dockerignore              # Phase 2: Ignore unnecessary files during build
+│   │
+│   ├── Phase 2: ci/                   # Phase 2: CI/CD related configuration
+│   │   ├── github_actions/            # Phase 2: GitHub Actions configuration (e.g., workflows)
+│   │   │   └── ci.yml
+│   │   ├── gitlab_ci/                 # Phase 2: GitLab CI configuration
+│   │   │   └── ci.yml
+│   │   └── jenkins/                   # Phase 2: Jenkins configuration (if needed)
+│   │       └── Jenkinsfile
+│   │
+│   ├── Phase 2: logs/                 # Phase 2: Logs directory for runtime logs
+│   │   ├── app_logs/                  # Phase 2: Application-specific logs
+│   │   └── error_logs/                # Phase 2: Error-specific logs
+│   │
+│   ├── Phase 2: graph_database/       # Phase 2: Graph database configurations and schemas
+│   │   └── neo4j/                     # Phase 2: Neo4j-specific configuration files
+│   │
+│   ├── Phase 2: relational_database/  # Phase 2: Relational database configurations and schemas
+│   │   ├── migrations/                # Phase 2: Database migration files
+│   │   └── postgres/                  # Phase 2: PostgreSQL-specific configuration files
+│   │
+│   ├── Phase 2: monitoring/           # Phase 2: Monitoring configurations for observability
+│   │   ├── grafana_dashboards/        # Phase 2: Grafana dashboard files
+│   │   └── prometheus.yml             # Phase 2: Prometheus configuration file
+│   │
+│   └── Phase 2: tests/                # Phase 2: Global unit and integration tests
+│       ├── test_api.py                # Phase 2: Tests for FastAPI app
+│       ├── test_module1.py            # Phase 2: Tests for module 1 (e.g., integration tests)
+│       ├── test_module2.py            # Phase 2: Tests for module 2 (e.g., integration tests)
+│       ├── test_graphql.py            # Phase 2: Tests for GraphQL queries and mutations
+│       ├── test_database.py           # Phase 2: Tests related to database queries and migrations
+│       └── ...                        # Phase 2: More test files
+│
+└── frontend/
+    ├── public/
+    ├── src/
+    └── index.html

@@ -1,0 +1,127 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1.page_title{
+    text-align: center;
+    height: 2rem;
+}
+
+.page_subtitle{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 0.7rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Main Body */
+.main {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Whiteboard Layout */
+.whiteboard {
+    display: grid;
+    gap: 2rem 2.5rem;
+    margin: 2rem 2rem;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-auto-rows: auto;
+    align-items: start;
+    grid-auto-flow: dense;
+}
+
+/* Department Division */
+.dept {
+    border-left: 5px solid;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.dept h5 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-left: 1rem;
+}
+
+/* Person Card */
+.employee {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 0.5rem 0.65rem;
+    margin: 0.5rem;
+    border-left: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    font-size: 0.8rem;
+}
+
+.employee.absent {
+    opacity: 0.3;
+}
+
+/* Profile Picture or Initials */
+.profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Information Section */
+.info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_info {
+    width: 70%;
+    text-align: left;
+}
+
+.main_info .name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.main_info .next_shift_area {
+    font-weight: 600;
+    display: inline;
+}
+
+/* Status Tag */
+.status {
+    width: 30%;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+    color: #000;
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { 
+    .whiteboard {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width:576px) {
+    .whiteboard {
+        grid-template-columns: 1fr; /* 1 column on mobile screens */
+    }
+}

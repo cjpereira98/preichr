@@ -1,0 +1,26 @@
+<!-- templates/staffing_board.html -->
+<h1 class="page_title">{{ page_title }} ({{weekday}})</h1>
+<div class="page_subtitle">{{ page_subtitle }}</p>
+
+<div class="whiteboard">
+    {% for department in departments %}
+    <div class="dept" data-department="{{ department.name }}">
+        <h5>{{ department.name }}</h5>
+        {% for employee in department.employees %}
+        <div class="employee">
+            <div class="profile">{{ employee.initials }}</div>
+            <div class="info">
+                <div class="main_info">
+                    <div class="name">
+                        {{ employee.name }}
+                        <span class="employee_id">({{ employee.employee_id }})</span>
+                    </div>
+                    next shift: <div class="next_shift_area">{{ department.name }} - {{ employee.next_shift_area.name }}</div>
+                </div>
+                <div class="status">{{ employee.status|upper }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
