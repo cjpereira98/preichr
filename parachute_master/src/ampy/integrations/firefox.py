@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # Add the directory three levels up to the system path to allow importing FirefoxIntegration
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-from config.config import BADGE, FCMPASS
+from config.config import BADGE, FCMPASS, FC
 
 class FirefoxIntegration:
     @staticmethod
@@ -86,6 +86,13 @@ class FirefoxIntegration:
             time.sleep(1)
             driver.find_element(By.ID, "password").send_keys(FCMPASS + Keys.ENTER)
             time.sleep(10)
+
+            # Enter the FC site code into the site selection field
+            site_input = WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.ID, "qlInput"))
+            )
+            site_input.send_keys(FC + Keys.ENTER)
+            time.sleep(3)
 
         return driver
     
