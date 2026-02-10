@@ -1,0 +1,28 @@
+﻿# Credentials & secrets
+*.env
+.env*
+credentials*
+*.pem
+*.key
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+*.json
+!package.json
+!config.template.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
