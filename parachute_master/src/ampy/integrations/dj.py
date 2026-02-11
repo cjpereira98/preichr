@@ -131,26 +131,36 @@ class DirectedJackpotIntegration:
         """
         try:
             self.navigate_to_tool()
-            while True:
+            logging.info("DJ navigate_to_tool completed successfully")
+        except Exception as e:
+            logging.error(f"DJ navigate_to_tool FAILED — thread cannot proceed: {e}")
+            return
+
+        while True:
+            try:
                 if self.buffer:
                     container = self.buffer.popleft()
-                    #logging.info(f"Processing container: {container}")
+                    logging.info(f"DJ processing container: {container} (buffer remaining: {len(self.buffer)})")
                     result = self.process_container(container)
-                    #logging.info(f"Result for container {container}: {result}")
-                    if result == 'invalid_container':
+                    logging.info(f"DJ result for {container}: {result}")
+                    if result is None:
+                        logging.warning(f"DJ got None result for {container} — container dropped")
+                    elif result == 'invalid_container':
                         if not container in self.repeat_buster:
                             self.repeat_buster.append(container)
                             si = SlackIntegration()
                             si.send_message('https://hooks.slack.com/workflows/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', {"csx": container})
                         sideline_integration.add_container_to_buffer(container, 'overage')
+                        logging.info(f"DJ -> Sideline: {container} (overage)")
                     elif result == 'invalid_routing':
                         unbind_integration.add_to_buffer(container)
+                        logging.info(f"DJ -> Unbind: {container}")
                     #elif result == 'virtually_empty':
                         #fc_research_integration.add_containers_to_buffer([container])
 
                 time.sleep(interval)  # Avoid busy waiting
-        except Exception as e:
-            logging.error(f"Error in inf_parse: {e}")
+            except Exception as e:
+                logging.error(f"DJ error processing iteration: {e}", exc_info=True)
 
     def navigate_to_tool(self):
         # Logic to navigate to the tool (e.g., the code before the loop in parse_containers)

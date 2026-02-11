@@ -145,16 +145,17 @@ class FCResearchIntegration:
         Continuously monitors the queue and processes containers.
         The function checks for new containers in the buffer and calls process_container() on each.
         """
-        try:
-            while True:
+        logging.info("FCResearch thread started")
+        while True:
+            try:
                 if self.buffer:
                     container = self.buffer.popleft()
-                    logging.info(f"Starting research on container: {container}")
+                    logging.info(f"FCResearch processing: {container} (buffer remaining: {len(self.buffer)})")
                     self.process_container(container, sideline_integration)
                 else:
                     time.sleep(interval)  # Wait for a bit before checking the queue again
-        except Exception as e:
-            logging.error(f"Error in inf_research: {e}")
+            except Exception as e:
+                logging.error(f"FCResearch error processing iteration: {e}", exc_info=True)
 
     def close(self):
         if self.own_driver:

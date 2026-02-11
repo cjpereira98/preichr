@@ -37,18 +37,23 @@ class UnbindIntegration:
         """
         try:
             self.navigate_to_tool()
-            while True:
-                print('unbind loop')
+            logging.info("Unbind navigate_to_tool completed successfully")
+        except Exception as e:
+            logging.error(f"Unbind navigate_to_tool FAILED — thread cannot proceed: {e}")
+            return
+
+        while True:
+            try:
                 if self.buffer:
-                    print('found something in buffer')
                     container_id = self.buffer.popleft()
-                    logging.info(f"Processing container: {container_id}")
+                    logging.info(f"Unbind processing: {container_id} (buffer remaining: {len(self.buffer)})")
                     success = self.process_container(container_id)
                     if success:
                         dj_integration.add_containers_to_buffer([container_id])
+                        logging.info(f"Unbind -> DJ: {container_id} (re-queued)")
                 time.sleep(interval)  # Avoid busy waiting
-        except Exception as e:
-            logging.error(f"Error in inf_unbind: {e}")
+            except Exception as e:
+                logging.error(f"Unbind error processing iteration: {e}", exc_info=True)
 
     def navigate_to_tool(self):
         """

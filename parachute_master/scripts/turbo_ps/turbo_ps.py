@@ -16,9 +16,15 @@ from ampy.integrations.container_research import ContainerResearchIntegration
 from ampy.integrations.unbind import UnbindIntegration
 from ampy.integrations.fc_research import FCResearchIntegration
 
-# Set up logging
-logging.basicConfig(filename='turbo_ps.log', level=logging.INFO, 
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+# Set up logging to both file and console
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - [%(threadName)s] %(message)s',
+    handlers=[
+        logging.FileHandler('turbo_ps.log'),
+        logging.StreamHandler()
+    ]
+)
 
 driver_lock = threading.Lock()
 driver_in_use = {}
@@ -57,11 +63,11 @@ def main(driver_pool=None, elapsed_minutes=5):
     fr_integration = FCResearchIntegration(fr_driver)
 
     # Start threads for continuous operation
-    cr_thread = threading.Thread(target=container_research.watch_ps, args=(dj_integration,))
-    dj_thread = threading.Thread(target=dj_integration.inf_parse, args=(sideline_integration,unbind_integration, fr_integration))
-    sideline_thread = threading.Thread(target=sideline_integration.inf_overage)
-    ub_thread = threading.Thread(target=unbind_integration.inf_unbind, args=(dj_integration,))
-    fr_thread = threading.Thread(target=fr_integration.inf_research, args=(sideline_integration,))
+    cr_thread = threading.Thread(target=container_research.watch_ps, args=(dj_integration,), name="ContainerResearch")
+    dj_thread = threading.Thread(target=dj_integration.inf_parse, args=(sideline_integration,unbind_integration, fr_integration), name="DirectedJackpot")
+    sideline_thread = threading.Thread(target=sideline_integration.inf_overage, name="Sideline")
+    ub_thread = threading.Thread(target=unbind_integration.inf_unbind, args=(dj_integration,), name="Unbind")
+    fr_thread = threading.Thread(target=fr_integration.inf_research, args=(sideline_integration,), name="FCResearch")
 
 
     cr_thread.start()

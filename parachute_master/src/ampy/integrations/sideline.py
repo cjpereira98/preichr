@@ -185,18 +185,24 @@ class SidelineIntegration:
         """
         try:
             self.navigate_to_tool()
-            while True:
+            logging.info("Sideline navigate_to_tool completed successfully")
+        except Exception as e:
+            logging.error(f"Sideline navigate_to_tool FAILED — thread cannot proceed: {e}")
+            return
+
+        while True:
+            try:
                 if self.overage_buffer:
                     container_id = self.overage_buffer.popleft()
-                    logging.info(f"Processing overage container: {container_id}")
+                    logging.info(f"Sideline processing overage: {container_id} (buffer remaining: {len(self.overage_buffer)})")
                     self.process_overage(container_id)
                 time.sleep(interval)  # Avoid busy waiting
                 if self.adjustment_buffer:
                     container_id, asins = self.adjustment_buffer.popleft()
-                    logging.info(f"Processing adjustment container: {container_id}")
+                    logging.info(f"Sideline processing adjustment: {container_id}")
                     self.process_adjustment(container_id, asins)
-        except Exception as e:
-            logging.error(f"Error in inf_overage: {e}")
+            except Exception as e:
+                logging.error(f"Sideline error processing iteration: {e}", exc_info=True)
 
     def navigate_to_tool(self):
         # Logic to navigate to the Sideline tool (e.g., similar to overage_containers)
