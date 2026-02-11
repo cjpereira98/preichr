@@ -35,15 +35,17 @@ class ContainerResearchIntegration:
         while retry_count < max_retries:
             try:
                 self.driver.refresh()
-                # Click the search button
-                WebDriverWait(self.driver, 10).until(
-                    EC.visibility_of_element_located((By.XPATH, "//button[@type='button' and @class='btn btn-success btn-sm time-search-button success' and @data-ng-click='performSearch()' and not(@disabled)]"))
-                ).click()
+                # Click the search button via JS to avoid element-obscured errors
+                search_btn = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, "//button[@type='button' and @class='btn btn-success btn-sm time-search-button success' and @data-ng-click='performSearch()' and not(@disabled)]"))
+                )
+                self.driver.execute_script("arguments[0].click();", search_btn)
 
-                # Click the export to CSV button
-                WebDriverWait(self.driver, 10).until(
-                    EC.visibility_of_element_located((By.XPATH, "//span[@translate='container_research_export_to_csv_button' and @class='ng-scope']"))
-                ).click()
+                # Click the export to CSV button via JS to avoid element-obscured errors
+                export_btn = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, "//span[@translate='container_research_export_to_csv_button' and @class='ng-scope']"))
+                )
+                self.driver.execute_script("arguments[0].click();", export_btn)
 
                 # If both operations succeed, break out of the loop
                 break

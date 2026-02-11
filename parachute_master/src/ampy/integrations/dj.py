@@ -148,8 +148,11 @@ class DirectedJackpotIntegration:
                     elif result == 'invalid_container':
                         if not container in self.repeat_buster:
                             self.repeat_buster.append(container)
-                            si = SlackIntegration()
-                            si.send_message('https://hooks.slack.com/workflows/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', {"csx": container})
+                            try:
+                                si = SlackIntegration()
+                                si.send_message('https://hooks.slack.com/workflows/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', {"csx": container})
+                            except Exception as slack_err:
+                                logging.warning(f"Slack notification failed for {container}: {slack_err}")
                         sideline_integration.add_container_to_buffer(container, 'overage')
                         logging.info(f"DJ -> Sideline: {container} (overage)")
                     elif result == 'invalid_routing':
